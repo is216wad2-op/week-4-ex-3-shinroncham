@@ -25,17 +25,17 @@
       
         // add code here
         function additems() {
-            var new_item = document.getElementsByName("items")[0].value;
+            var new_item = document.getElementsByName("items")[0];
             var ul_items = document.getElementsByTagName("ul")[0];
 
             var list_item = document.createElement("li");
-            if (new_item.length > 0 ) {
-                var node = document.createTextNode(new_item);
+            if (new_item.value.length > 0 ) {
+                var node = document.createTextNode(new_item.value);
                 list_item.append(node);
 
-                ul_items.append(list_item)
+                ul_items.append(list_item);
+                new_item.value = "";
             }
-            new_item = "";
         }
 
       </script>
