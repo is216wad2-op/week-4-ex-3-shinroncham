@@ -8,6 +8,10 @@
       <p>Get it done today</p>
       
         <!-- add HTML code here -->
+         <form name="form" action="" onsubmit="additems()">
+            <input type="text" name="items" placeholder="enter items">
+            <input type="submit" name="enter">
+        </form>
 
       <ul>
          <li>Notebook</li>
@@ -21,6 +25,17 @@
       <script>
       
         // add code here
+        function additems() {
+            event.preventDefault();
+            var new_item = document.getElementsByName("items")[0].value;
+            var ul_items = document.getElementsByTagName("ul")[0];
+
+            var list_item = document.createElement("li");
+            var node = document.createTextNode(new_item);
+            list_item.append(node);
+
+            ul_items.append(list_item)
+        }
 
       </script>
  
